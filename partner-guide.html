@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Guide - StreetHeat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#FF4500', background: '#1C1C1E', card: '#2C2C2E', text: '#F2F2F7', textSecondary: '#9CA3AF' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Permanent Marker', 'cursive'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-text">
+    <nav class="p-6 border-b border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <a href="index.html" class="text-primary hover:text-white transition-colors font-bold">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="relative bg-gradient-to-r from-orange-900/40 to-background py-20 px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white">StreetHeat for Owners 💼</h1>
+        <p class="text-xl text-textSecondary max-w-2xl mx-auto">Turn your map pin into a destination. Take control of your listing to attract more customers.</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-16">
+        <!-- Step 1 -->
+        <div class="flex gap-6">
+            <div class="hidden md:flex flex-col items-center">
+                <div class="w-10 h-10 rounded-full bg-primary text-black font-bold flex items-center justify-center text-xl">1</div>
+                <div class="w-1 h-full bg-white/10 my-2"></div>
+            </div>
+            <div class="flex-1">
+                <h2 class="text-2xl font-bold mb-4 text-white">Claim Your Spot (Free)</h2>
+                <p class="text-gray-300 mb-4">Stop random users from editing your name. Get the <strong>Blue "Official" Badge</strong> to show customers you are the real deal.</p>
+                <div class="bg-card p-6 rounded-xl border border-white/5">
+                    <ul class="list-disc pl-5 text-textSecondary space-y-2">
+                        <li>Find your business on the map.</li>
+                        <li>Scroll down and tap <strong>"Own this business? Claim it."</strong></li>
+                        <li>Upload a photo of your License or Selfie in the truck for verification.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex gap-6">
+            <div class="hidden md:flex flex-col items-center">
+                <div class="w-10 h-10 rounded-full bg-white/20 text-white font-bold flex items-center justify-center text-xl">2</div>
+                <div class="w-1 h-full bg-white/10 my-2"></div>
+            </div>
+            <div class="flex-1">
+                <h2 class="text-2xl font-bold mb-4 text-white">Unlock Premium Tools 💎</h2>
+                <p class="text-gray-300 mb-6">Upgrade to <strong>StreetHeat Pro</strong> ($14.99/mo) to unlock marketing features that drive sales:</p>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-card p-5 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
+                        <div class="text-2xl mb-2">💳</div>
+                        <h3 class="font-bold text-primary mb-2">Payment Methods</h3>
+                        <p class="text-sm text-textSecondary">Show that you accept Zelle, Venmo, & Card so customers don't walk away.</p>
+                    </div>
+                    <div class="bg-card p-5 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
+                        <div class="text-2xl mb-2">📸</div>
+                        <h3 class="font-bold text-primary mb-2">Photo Carousel</h3>
+                        <p class="text-sm text-textSecondary">Showcase your menu with high-quality photos at the top of your page.</p>
+                    </div>
+                    <div class="bg-card p-5 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
+                        <div class="text-2xl mb-2">📱</div>
+                        <h3 class="font-bold text-primary mb-2">Social Growth</h3>
+                        <p class="text-sm text-textSecondary">Link your Instagram, Facebook, & TikTok directly to grow your following.</p>
+                    </div>
+                    <div class="bg-card p-5 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
+                        <div class="text-2xl mb-2">🏆</div>
+                        <h3 class="font-bold text-primary mb-2">Gold Pin</h3>
+                        <p class="text-sm text-textSecondary">Stand out on the map with a permanent Gold Marker that never fades.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA -->
+        <div class="text-center pt-10 border-t border-white/10">
+            <p class="text-lg mb-6 text-gray-300">Ready to start?</p>
+            <div class="inline-block px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
+                Download the App to Claim
+            </div>
+        </div>
+    </main>
+</body>
+</html>
