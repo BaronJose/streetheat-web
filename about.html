@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About StreetHeat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#FF4500', background: '#1C1C1E', card: '#2C2C2E', text: '#F2F2F7', textSecondary: '#9CA3AF' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Permanent Marker', 'cursive'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* App View Logic */
+        body.app-view nav { display: none !important; }
+        body.app-view header { padding-top: 40px; }
+        body.app-view footer { display: none !important; } 
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('view') === 'app') {
+                document.body.classList.add('app-view');
+            }
+        });
+    </script>
+</head>
+<body class="bg-background text-text selection:bg-primary selection:text-white flex flex-col min-h-screen">
+
+    <nav class="p-6 border-b border-white/5 bg-background/90 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="text-primary group-hover:-translate-x-1 transition-transform">←</span>
+                <span class="font-bold hover:text-white transition-colors">Back to Home</span>
+            </a>
+            <span class="font-display text-xl tracking-wide text-primary">StreetHeat</span>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex flex-col items-center justify-center text-center px-6 py-16 max-w-2xl mx-auto">
+        
+        <!-- Logo -->
+        <div class="mb-8 relative group">
+            <div class="absolute inset-0 bg-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <img src="assets/images/logo.png" alt="StreetHeat Logo" class="w-32 h-32 relative z-10 drop-shadow-2xl">
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-2 text-white">StreetHeat</h1>
+        <p class="text-textSecondary mb-12 text-sm tracking-widest uppercase">Version 1.0.0</p>
+
+        <!-- Story -->
+        <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+            <p>
+                StreetHeat was built to solve a simple problem: <br>
+                <strong class="text-white">Finding street food shouldn't be hard.</strong>
+            </p>
+            <p>
+                Traditional maps are often outdated. They send you to empty street corners where a truck "used to be."
+            </p>
+            <p>
+                We built StreetHeat to be the real-time pulse of the street food scene. By connecting hungry explorers with local vendors, we ensure you never drive to a closed spot again.
+            </p>
+        </div>
+
+        <!-- Credits -->
+        <div class="mt-16 pt-8 border-t border-white/10 w-full">
+            <p class="text-sm text-textSecondary mb-2">Designed & Developed by</p>
+            <a href="https://baronxdev.com" target="_blank" class="text-2xl font-bold text-primary hover:text-white transition-colors">
+                BaronXDev
+            </a>
+            <p class="text-sm text-textSecondary mt-2">Made with ❤️ in Madera, CA</p>
+        </div>
+
+    </main>
+
+    <footer class="py-12 text-center text-textSecondary text-sm opacity-50 border-t border-white/10 bg-background">
+        &copy; 2025 BaronXDev. All rights reserved.
+    </footer>
+
+</body>
+</html>
