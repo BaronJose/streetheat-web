@@ -23,16 +23,16 @@
         body.app-view nav { display: none !important; }
         /* Add extra top padding so content doesn't hit the status bar in the app */
         body.app-view header { padding-top: 40px; }
-        body.app-view footer { display: none !important; } /* Optional: Hide footer in app too */
+        body.app-view footer { display: none !important; } 
     </style>
     <script>
-        // Check for ?view=app query param to enable App Mode
-        (function() {
+        // FIXED: Wait for DOMContentLoaded to ensure document.body exists
+        document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('view') === 'app') {
                 document.body.classList.add('app-view');
             }
-        })();
+        });
     </script>
 </head>
 <body class="bg-background text-text selection:bg-primary selection:text-white">
