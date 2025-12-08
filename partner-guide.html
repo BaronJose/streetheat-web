@@ -18,70 +18,138 @@
             }
         }
     </script>
+    <style>
+        /* Hide navigation when in App View */
+        body.app-view nav { display: none !important; }
+        /* Add extra top padding so content doesn't hit the status bar in the app */
+        body.app-view header { padding-top: 40px; }
+        body.app-view footer { display: none !important; } /* Optional: Hide footer in app too */
+    </style>
+    <script>
+        // Check for ?view=app query param to enable App Mode
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('view') === 'app') {
+                document.body.classList.add('app-view');
+            }
+        })();
+    </script>
 </head>
-<body class="bg-background text-text">
-    <nav class="p-6 border-b border-white/5">
-        <div class="max-w-4xl mx-auto">
-            <a href="index.html" class="text-primary hover:text-white transition-colors font-bold">← Back to Home</a>
+<body class="bg-background text-text selection:bg-primary selection:text-white">
+
+    <!-- NAV (Hidden in App) -->
+    <nav class="p-6 border-b border-white/5 bg-background/90 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="text-primary group-hover:-translate-x-1 transition-transform">←</span>
+                <span class="font-bold hover:text-white transition-colors">Back to Home</span>
+            </a>
+            <span class="font-display text-xl tracking-wide text-primary">StreetHeat</span>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="relative bg-gradient-to-r from-orange-900/40 to-background py-20 px-6 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white">StreetHeat for Owners 💼</h1>
-        <p class="text-xl text-textSecondary max-w-2xl mx-auto">Turn your map pin into a destination. Take control of your listing to attract more customers.</p>
+    <!-- HERO HEADER -->
+    <header class="relative bg-gradient-to-b from-orange-900/40 to-background pt-20 pb-16 px-6 text-center overflow-hidden">
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <div class="inline-block px-3 py-1 mb-4 border border-primary/30 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
+                For Business Owners
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white leading-tight">
+                Turn your Map Pin into a <span class="text-primary">Destination.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Take control of your listing on StreetHeat to attract more customers, show you are open, and grow your following.
+            </p>
+        </div>
+        <!-- Decorative Glow -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-12 space-y-16">
-        <!-- Step 1 -->
-        <div class="flex gap-6">
-            <div class="hidden md:flex flex-col items-center">
-                <div class="w-10 h-10 rounded-full bg-primary text-black font-bold flex items-center justify-center text-xl">1</div>
-                <div class="w-1 h-full bg-white/10 my-2"></div>
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-24">
+        
+        <!-- STEP 1: CLAIM -->
+        <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+            <div class="hidden md:flex flex-col items-center pt-2">
+                <div class="w-12 h-12 rounded-full bg-card border border-white/10 text-primary font-bold flex items-center justify-center text-xl shadow-lg shadow-primary/10">1</div>
+                <div class="w-0.5 h-32 bg-gradient-to-b from-primary/50 to-transparent my-2"></div>
             </div>
             <div class="flex-1">
-                <h2 class="text-2xl font-bold mb-4 text-white">Claim Your Spot (Free)</h2>
-                <p class="text-gray-300 mb-4">Stop random users from editing your name. Get the <strong>Blue "Official" Badge</strong> to show customers you are the real deal.</p>
-                <div class="bg-card p-6 rounded-xl border border-white/5">
-                    <ul class="list-disc pl-5 text-textSecondary space-y-2">
-                        <li>Find your business on the map.</li>
-                        <li>Scroll down and tap <strong>"Own this business? Claim it."</strong></li>
-                        <li>Upload a photo of your License or Selfie in the truck for verification.</li>
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white flex items-center gap-3">
+                    <span class="md:hidden text-primary">1.</span> Claim Your Spot (Free)
+                </h2>
+                <p class="text-gray-400 mb-6 text-lg">
+                    Stop random users from editing your name. Get the <strong class="text-blue-400">Blue "Official" Badge</strong> to show customers you are the real deal.
+                </p>
+                <div class="bg-card p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <span class="text-green-500">✓</span>
+                            <span class="text-gray-300">Find your business on the map.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-green-500">✓</span>
+                            <span class="text-gray-300">Scroll down and tap <strong>"Own this business? Claim it."</strong></span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-green-500">✓</span>
+                            <span class="text-gray-300">Upload a photo of your License or Selfie in the truck.</span>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Step 2 -->
-        <div class="flex gap-6">
-            <div class="hidden md:flex flex-col items-center">
-                <div class="w-10 h-10 rounded-full bg-white/20 text-white font-bold flex items-center justify-center text-xl">2</div>
-                <div class="w-1 h-full bg-white/10 my-2"></div>
+        <!-- STEP 2: PREMIUM TOOLS -->
+        <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+            <div class="hidden md:flex flex-col items-center pt-2">
+                <div class="w-12 h-12 rounded-full bg-primary text-black font-bold flex items-center justify-center text-xl shadow-lg shadow-primary/50">2</div>
             </div>
             <div class="flex-1">
-                <h2 class="text-2xl font-bold mb-4 text-white">Unlock Premium Tools 💎</h2>
-                <p class="text-gray-300 mb-6">Upgrade to <strong>StreetHeat Pro</strong> ($14.99/mo) to unlock marketing features that drive sales:</p>
+                <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+                        <span class="md:hidden text-primary">2.</span> Unlock Premium Tools
+                    </h2>
+                    <span class="px-3 py-1 bg-yellow-500/20 text-yellow-500 border border-yellow-500/30 rounded-lg text-sm font-bold">Pro Feature</span>
+                </div>
+                
+                <p class="text-gray-400 mb-8 text-lg">
+                    Upgrade to <strong>StreetHeat Pro</strong> to unlock marketing features that drive sales.
+                    <br>
+                    <span class="text-sm text-primary mt-2 block font-semibold">Limited Time Founder's Rate: $9.99/mo (Reg. $14.99)</span>
+                </p>
                 
                 <div class="grid md:grid-cols-2 gap-4">
-                    <div class="bg-card p-5 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
-                        <div class="text-2xl mb-2">💳</div>
-                        <h3 class="font-bold text-primary mb-2">Payment Methods</h3>
-                        <p class="text-sm text-textSecondary">Show that you accept Zelle, Venmo, & Card so customers don't walk away.</p>
+                    <!-- Feature Card 1 -->
+                    <div class="bg-card p-5 rounded-2xl border border-white/5 hover:border-primary/40 transition-colors group">
+                        <div class="text-3xl mb-3 group-hover:scale-110 transition-transform duration-200">💳</div>
+                        <h3 class="font-bold text-white text-lg mb-2">Payment Methods</h3>
+                        <p class="text-sm text-textSecondary leading-relaxed">
+                            Don't lose customers who don't carry cash. Show that you accept <span class="text-white">Zelle, Venmo, & Cards</span>.
+                        </p>
                     </div>
-                    <div class="bg-card p-5 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
-                        <div class="text-2xl mb-2">📸</div>
-                        <h3 class="font-bold text-primary mb-2">Photo Carousel</h3>
-                        <p class="text-sm text-textSecondary">Showcase your menu with high-quality photos at the top of your page.</p>
+                    <!-- Feature Card 2 -->
+                    <div class="bg-card p-5 rounded-2xl border border-white/5 hover:border-primary/40 transition-colors group">
+                        <div class="text-3xl mb-3 group-hover:scale-110 transition-transform duration-200">📸</div>
+                        <h3 class="font-bold text-white text-lg mb-2">Photo Carousel</h3>
+                        <p class="text-sm text-textSecondary leading-relaxed">
+                            Replace blurry user photos. Showcase your menu with a <span class="text-white">Professional Header Gallery</span>.
+                        </p>
                     </div>
-                    <div class="bg-card p-5 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
-                        <div class="text-2xl mb-2">📱</div>
-                        <h3 class="font-bold text-primary mb-2">Social Growth</h3>
-                        <p class="text-sm text-textSecondary">Link your Instagram, Facebook, & TikTok directly to grow your following.</p>
+                    <!-- Feature Card 3 -->
+                    <div class="bg-card p-5 rounded-2xl border border-white/5 hover:border-primary/40 transition-colors group">
+                        <div class="text-3xl mb-3 group-hover:scale-110 transition-transform duration-200">📱</div>
+                        <h3 class="font-bold text-white text-lg mb-2">Social Growth</h3>
+                        <p class="text-sm text-textSecondary leading-relaxed">
+                            Turn map traffic into followers. Link your <span class="text-white">Instagram, Facebook & TikTok</span> directly.
+                        </p>
                     </div>
-                    <div class="bg-card p-5 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
-                        <div class="text-2xl mb-2">🏆</div>
-                        <h3 class="font-bold text-primary mb-2">Gold Pin</h3>
-                        <p class="text-sm text-textSecondary">Stand out on the map with a permanent Gold Marker that never fades.</p>
+                    <!-- Feature Card 4 -->
+                    <div class="bg-card p-5 rounded-2xl border border-white/5 hover:border-primary/40 transition-colors group">
+                        <div class="text-3xl mb-3 group-hover:scale-110 transition-transform duration-200">🏆</div>
+                        <h3 class="font-bold text-white text-lg mb-2">Gold Pin</h3>
+                        <p class="text-sm text-textSecondary leading-relaxed">
+                            Stand out on the map with a permanent <span class="text-yellow-500 font-bold">Gold Marker</span> that never fades or expires.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -89,11 +157,24 @@
         
         <!-- CTA -->
         <div class="text-center pt-10 border-t border-white/10">
-            <p class="text-lg mb-6 text-gray-300">Ready to start?</p>
-            <div class="inline-block px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors cursor-pointer">
-                Download the App to Claim
+            <h3 class="text-2xl font-bold text-white mb-6">Ready to grow your business?</h3>
+            <div class="inline-block px-8 py-4 bg-white text-black font-bold rounded-full text-lg cursor-default opacity-80 md:hidden">
+                Tap "Claim" in the App
+            </div>
+            <!-- Visible only on desktop website -->
+            <div class="hidden md:block">
+                <p class="text-textSecondary mb-4">Download the app to get started.</p>
+                <div class="flex justify-center gap-4">
+                     <!-- You can reuse your store buttons here if you want -->
+                     <button class="bg-black border border-white/20 px-6 py-3 rounded-lg text-white font-bold hover:scale-105 transition-transform">Download App</button>
+                </div>
             </div>
         </div>
     </main>
+    
+    <!-- Footer (Hidden in App) -->
+    <footer class="py-12 text-center text-textSecondary text-sm opacity-50">
+        &copy; 2025 BaronXDev. All rights reserved.
+    </footer>
 </body>
 </html>
