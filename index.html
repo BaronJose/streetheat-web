@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,8 @@
     <!-- 1. Google Fonts: Inter (Clean) & Permanent Marker (Street Vibe) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
 
     <!-- 2. Phosphor Icons (Lightweight & Modern) -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -43,11 +45,23 @@
 
     <style>
         /* Custom Scrollbar for that premium feel */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #1C1C1E; }
-        ::-webkit-scrollbar-thumb { background: #2C2C2E; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #FF4500; }
-        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1C1C1E;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2C2C2E;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF4500;
+        }
+
         /* Mobile Phone Frame Styling */
         .phone-frame {
             border: 14px solid #2C2C2E;
@@ -56,13 +70,37 @@
             position: relative;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
+
         .phone-notch {
-            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-            width: 50%; height: 25px; background: #2C2C2E;
-            border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; z-index: 10;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 25px;
+            background: #2C2C2E;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 10;
+        }
+
+        /* Marquee Animation for Cuisine Ticker */
+        .animate-marquee {
+            animation: marquee 25s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
     </style>
 </head>
+
 <body class="bg-background text-text overflow-x-hidden">
 
     <!-- NAV -->
@@ -72,7 +110,8 @@
                 <img src="assets/images/logo.png" alt="Logo" class="w-8 h-8 object-contain">
                 <span class="font-display text-2xl tracking-wide">StreetHeat</span>
             </div>
-            <a href="#download" class="hidden md:block bg-white text-black px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform">
+            <a href="#download"
+                class="hidden md:block bg-white text-black px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform">
                 Get the App
             </a>
         </div>
@@ -81,26 +120,41 @@
     <!-- HERO SECTION -->
     <section class="relative pt-32 pb-20 px-6 overflow-hidden">
         <!-- Background Glow -->
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/3"></div>
+        <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/3">
+        </div>
+        <!-- Header Glow -->
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/20 blur-[100px] rounded-full pointer-events-none">
+        </div>
 
         <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
             <!-- Text Content -->
             <div data-aos="fade-up">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-bold mb-8">
-                    <i class="ph-fill ph-rocket"></i> Now Live in Beta
+                <div class="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wide">
+                        <i class="ph-fill ph-rocket"></i> Live in Beta
+                    </div>
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-gray-300 text-xs font-bold uppercase tracking-wide">
+                        <i class="ph-fill ph-map-pin"></i> Born in Central Valley, CA
+                    </div>
                 </div>
                 <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
                     The Waze for <br>
                     <span class="text-primary">Street Food.</span>
                 </h1>
                 <p class="text-xl text-textSecondary mb-10 leading-relaxed max-w-lg">
-                    Find the best taco trucks, stands, and pop-ups near you in real-time. Verified by the community, so you never drive to a closed spot again.
+                    Find the best taco trucks, stands, and pop-ups near you in real-time. Verified by the community, so
+                    you never drive to a closed spot again.
                 </p>
-                
+
                 <!-- Store Buttons (Pure CSS) -->
                 <div id="download" class="flex flex-wrap gap-4">
                     <!-- Apple -->
-                    <a href="#" class="flex items-center gap-3 bg-black border border-white/10 px-5 py-3 rounded-xl hover:border-primary/50 hover:scale-105 transition-all group">
+                    <a href="#"
+                        class="flex items-center gap-3 bg-black border border-white/10 px-5 py-3 rounded-xl hover:border-primary/50 hover:scale-105 transition-all group">
                         <i class="ph-fill ph-apple-logo text-3xl group-hover:text-white"></i>
                         <div class="flex flex-col leading-none">
                             <span class="text-xs text-gray-400 uppercase">Download on the</span>
@@ -108,7 +162,8 @@
                         </div>
                     </a>
                     <!-- Google -->
-                    <a href="#" class="flex items-center gap-3 bg-black border border-white/10 px-5 py-3 rounded-xl hover:border-primary/50 hover:scale-105 transition-all group">
+                    <a href="#"
+                        class="flex items-center gap-3 bg-black border border-white/10 px-5 py-3 rounded-xl hover:border-primary/50 hover:scale-105 transition-all group">
                         <i class="ph-fill ph-google-play-logo text-3xl group-hover:text-white"></i>
                         <div class="flex flex-col leading-none">
                             <span class="text-xs text-gray-400 uppercase">Get it on</span>
@@ -122,10 +177,12 @@
             <div class="relative flex justify-center" data-aos="fade-left" data-aos-delay="200">
                 <div class="phone-frame w-[300px] h-[600px] bg-black">
                     <div class="phone-notch"></div>
-                    <img src="assets/images/mockup-map.jpeg" alt="App Screenshot" class="w-full h-full object-cover opacity-90">
+                    <img src="assets/images/mockup-map.jpeg" alt="App Screenshot"
+                        class="w-full h-full object-cover opacity-90">
                 </div>
                 <!-- Floating Card Decoration -->
-                <div class="absolute -bottom-10 -left-10 bg-card p-4 rounded-2xl border border-white/10 shadow-2xl flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+                <div class="absolute -bottom-10 -left-10 bg-card p-4 rounded-2xl border border-white/10 shadow-2xl flex items-center gap-4 animate-bounce"
+                    style="animation-duration: 3s;">
                     <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-500">
                         <i class="ph-fill ph-check-circle text-2xl"></i>
                     </div>
@@ -138,35 +195,77 @@
         </div>
     </section>
 
+    <!-- CUISINE TICKER -->
+    <div class="w-full bg-primary/5 border-y border-white/5 overflow-hidden py-4">
+        <div class="relative w-full flex overflow-x-hidden group">
+            <div
+                class="animate-marquee whitespace-nowrap flex items-center gap-16 text-textSecondary font-bold uppercase tracking-widest text-sm">
+                <!-- Content Set 1 -->
+                <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-primary"></i> Tacos</span>
+                <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-primary"></i> Hot
+                    Dogs</span>
+                <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-primary"></i> Elote</span>
+                <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-primary"></i> Fruit
+                    Stands</span>
+                <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-primary"></i> BBQ</span>
+                <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-primary"></i>
+                    Tamales</span>
+                <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-primary"></i>
+                    Mariscos</span>
+
+                <!-- Duplicate Set (For seamless loop) -->
+                <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-primary"></i> Tacos</span>
+                <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-primary"></i> Hot
+                    Dogs</span>
+                <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-primary"></i> Elote</span>
+                <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-primary"></i> Fruit
+                    Stands</span>
+                <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-primary"></i> BBQ</span>
+                <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-primary"></i>
+                    Tamales</span>
+                <span class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-primary"></i>
+                    Mariscos</span>
+            </div>
+        </div>
+    </div>
+
     <!-- FEATURES GRID -->
     <section class="py-24 bg-card/30">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="p-8 rounded-3xl bg-card border border-white/5 hover:border-primary/30 transition-colors" data-aos="fade-up" data-aos-delay="0">
+                <div class="p-8 rounded-3xl bg-card border border-white/5 hover:border-primary/30 transition-colors"
+                    data-aos="fade-up" data-aos-delay="0">
                     <div class="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-6">
                         <i class="ph-fill ph-map-pin text-3xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-3">Live Verification</h3>
-                    <p class="text-textSecondary">Green means OPEN. Real people verify locations instantly so you don't waste gas.</p>
+                    <p class="text-textSecondary">Green means OPEN. Real people verify locations instantly so you don't
+                        waste gas.</p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="p-8 rounded-3xl bg-card border border-white/5 hover:border-primary/30 transition-colors" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center text-blue-500 mb-6">
+                <div class="p-8 rounded-3xl bg-card border border-white/5 hover:border-primary/30 transition-colors"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center text-blue-500 mb-6">
                         <i class="ph-fill ph-credit-card text-3xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-3">Payment Clarity</h3>
-                    <p class="text-textSecondary">Cash only? Venmo? Zelle? Know exactly how to pay before you get in line.</p>
+                    <p class="text-textSecondary">Cash only? Venmo? Zelle? Know exactly how to pay before you get in
+                        line.</p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="p-8 rounded-3xl bg-card border border-white/5 hover:border-primary/30 transition-colors" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-green-500/20 rounded-2xl flex items-center justify-center text-green-500 mb-6">
+                <div class="p-8 rounded-3xl bg-card border border-white/5 hover:border-primary/30 transition-colors"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 bg-green-500/20 rounded-2xl flex items-center justify-center text-green-500 mb-6">
                         <i class="ph-fill ph-chats-circle text-3xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-3">Real-Time Intel</h3>
-                    <p class="text-textSecondary">See status updates from the line. "Sold out of Asada!" or "Wait time 10 mins."</p>
+                    <p class="text-textSecondary">See status updates from the line. "Sold out of Asada!" or "Wait time
+                        10 mins."</p>
                 </div>
             </div>
         </div>
@@ -174,13 +273,16 @@
 
     <!-- BUSINESS BANNER -->
     <section class="py-24 px-6">
-        <div class="max-w-5xl mx-auto relative rounded-[3rem] overflow-hidden bg-gradient-to-br from-orange-900 to-black border border-primary/20 text-center px-6 py-20" data-aos="zoom-in">
+        <div class="max-w-5xl mx-auto relative rounded-[3rem] overflow-hidden bg-gradient-to-br from-orange-900 to-black border border-primary/20 text-center px-6 py-20"
+            data-aos="zoom-in">
             <div class="relative z-10">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6">Own a Food Truck?</h2>
                 <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                    Claim your spot on StreetHeat to manage your menu, update your hours, and show customers you accept card payments.
+                    Claim your spot on StreetHeat to manage your menu, update your hours, and show customers you accept
+                    card payments.
                 </p>
-                <a href="partner-guide.html" class="inline-block bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-200 transition-colors">
+                <a href="partner-guide.html"
+                    class="inline-block bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-200 transition-colors">
                     View Partner Guide
                 </a>
             </div>
@@ -217,4 +319,5 @@
         });
     </script>
 </body>
+
 </html>
