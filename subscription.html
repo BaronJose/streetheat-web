@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreetHeat Pro - Subscription Plans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF4500',
+                        background: '#1C1C1E',
+                        card: '#2C2C2E',
+                        text: '#F2F2F7',
+                        textSecondary: '#9CA3AF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Permanent Marker', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hide navigation when in App View */
+        body.app-view nav {
+            display: none !important;
+        }
+
+        /* Add extra top padding so content doesn't hit the status bar */
+        body.app-view main {
+            padding-top: 20px;
+        }
+
+        /* Sticky bottom button */
+        .sticky-bottom {
+            position: sticky;
+            bottom: 0;
+            z-index: 50;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-text min-h-screen flex flex-col">
+    <!-- Navigation (Hidden in App View) -->
+    <nav class="p-6 border-b border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <a href="index.html" class="text-primary hover:text-white transition-colors font-bold">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-2xl mx-auto w-full px-6 py-8 pb-32">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1
+                class="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-primary bg-clip-text text-transparent">
+                StreetHeat Pro
+            </h1>
+            <p class="text-xl text-textSecondary">
+                Turn your listing into a customer magnet.
+            </p>
+        </div>
+
+        <!-- Pricing Card -->
+        <div class="bg-card border-2 border-yellow-500/50 rounded-3xl p-8 mb-8 shadow-2xl shadow-yellow-500/10">
+            <div class="text-center mb-6">
+                <!-- Strikethrough Price -->
+                <div class="text-2xl text-textSecondary line-through mb-2">
+                    $14.99/mo
+                </div>
+                <!-- Main Price -->
+                <div class="text-6xl font-extrabold text-white mb-3">
+                    $9.99
+                    <span class="text-2xl text-textSecondary font-normal">/ month</span>
+                </div>
+                <!-- Founder's Rate Badge -->
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/20 border border-green-500/50 text-green-400 text-sm font-bold uppercase tracking-wide mb-4">
+                    <i class="ph-fill ph-crown"></i> FOUNDER'S RATE
+                </div>
+            </div>
+        </div>
+
+        <!-- Disclaimer Section -->
+        <div class="mb-8">
+            <p class="text-sm text-textSecondary leading-relaxed text-center">
+                * Founder's Rate is guaranteed for the lifetime of your active subscription. If service is cancelled or
+                lapses due to non-payment, future renewals will be at the standard rate.
+            </p>
+        </div>
+
+        <!-- Features List -->
+        <div class="space-y-4 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-6">What's Included:</h2>
+
+            <!-- Feature 1: Payment Methods -->
+            <div class="bg-card rounded-2xl p-6 border border-white/5 flex items-start gap-4">
+                <div class="text-3xl flex-shrink-0">💳</div>
+                <div class="flex-grow">
+                    <h3 class="text-lg font-bold text-white mb-2">Payment Methods</h3>
+                    <p class="text-textSecondary">Show customers you accept CashApp, Zelle, and Cards.</p>
+                </div>
+                <i class="ph-fill ph-check-circle text-primary text-2xl flex-shrink-0"></i>
+            </div>
+
+            <!-- Feature 2: Photo Carousel -->
+            <div class="bg-card rounded-2xl p-6 border border-white/5 flex items-start gap-4">
+                <div class="text-3xl flex-shrink-0">📸</div>
+                <div class="flex-grow">
+                    <h3 class="text-lg font-bold text-white mb-2">Photo Carousel</h3>
+                    <p class="text-textSecondary">Showcase your menu with a professional header gallery.</p>
+                </div>
+                <i class="ph-fill ph-check-circle text-primary text-2xl flex-shrink-0"></i>
+            </div>
+
+            <!-- Feature 3: Social Growth -->
+            <div class="bg-card rounded-2xl p-6 border border-white/5 flex items-start gap-4">
+                <div class="text-3xl flex-shrink-0">📱</div>
+                <div class="flex-grow">
+                    <h3 class="text-lg font-bold text-white mb-2">Social Growth</h3>
+                    <p class="text-textSecondary">Link your Instagram & TikTok directly to turn map traffic into
+                        followers.</p>
+                </div>
+                <i class="ph-fill ph-check-circle text-primary text-2xl flex-shrink-0"></i>
+            </div>
+
+            <!-- Feature 4: Gold Pin -->
+            <div class="bg-card rounded-2xl p-6 border border-white/5 flex items-start gap-4">
+                <div class="text-3xl flex-shrink-0">🏆</div>
+                <div class="flex-grow">
+                    <h3 class="text-lg font-bold text-white mb-2">Gold Pin</h3>
+                    <p class="text-textSecondary">Stand out on the map with a permanent Gold Marker that never fades.
+                    </p>
+                </div>
+                <i class="ph-fill ph-check-circle text-primary text-2xl flex-shrink-0"></i>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <div class="max-w-2xl mx-auto px-6 pb-4">
+        <p class="text-sm text-textSecondary text-center leading-relaxed">
+            We will review your request and send payment instructions within 24 hours.
+        </p>
+    </div>
+
+    <!-- Sticky Bottom CTA -->
+    <div class="sticky-bottom bg-background border-t border-white/5 p-6">
+        <div class="max-w-2xl mx-auto">
+            <a href="mailto:support@baronxdev.com?subject=Founder%20Rate%20Request&body=Hi%2C%20I%27d%20like%20to%20request%20activation%20for%20StreetHeat%20Pro%20at%20the%20Founder%27s%20Rate%20%28%249.99%2Fmonth%29.%0A%0ABusiness%20Name%3A%0A%0AThank%20you%21"
+                class="block w-full bg-primary text-white text-center py-4 px-6 rounded-2xl font-bold text-lg hover:bg-orange-600 transition-colors active:scale-95">
+                Request Activation
+            </a>
+        </div>
+    </div>
+
+    <!-- App View Script -->
+    <script>
+            // Check for ?view=app query param
+            (function () {
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('view') === 'app') {
+                    document.body.classList.add('app-view');
+                }
+            })();
+    </script>
+</body>
+
+</html>
